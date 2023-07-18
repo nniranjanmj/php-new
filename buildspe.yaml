@@ -1,5 +1,4 @@
 version: 0.2
-
 phases:
   install:
     runtime-versions:
@@ -7,24 +6,14 @@ phases:
     commands:
       - echo "Installing dependencies..."
       - composer install --no-interaction --no-progress --no-suggest
-
-  pre_build:
-    commands:
-      - echo "Running pre-build steps..."
-      # Add any pre-build commands here
-
   build:
     commands:
-      - echo "Running build steps..."
-      - cp application/config/database.sample.php application/config/database.php
-      - cp application/config/config.sample.php application/config/config.php
+      - echo "Building project..."
       # Add any build commands here
-
   post_build:
     commands:
       - echo "Running post-build steps..."
       # Add any post-build commands here
-
 artifacts:
   files:
     - '**/*'
